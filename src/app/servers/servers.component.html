@@ -1,3 +1,5 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!-- <p>{{ allowNewServer }}</p>             string interpolation example. String interpolation requires curly braces -->
+<p [innerText]="allowNewServer"></p>    <!-- property binding example. property binding requires brackets around the DOM property and quotes around the type script code that returns the expected data type for that property -->
 <app-server></app-server>
 <app-server></app-server>
