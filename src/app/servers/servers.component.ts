@@ -21,6 +21,7 @@ export class ServersComponent implements OnInit {
 
   allowNewServer:boolean = false;
   serverCreationStatus:string = 'No server was created!';
+  serverName:string = '';
 
   constructor() { 
     setTimeout(() => {
@@ -39,6 +40,10 @@ export class ServersComponent implements OnInit {
   onMouseUp(){
     console.log("You are in mouse up");
     this.serverCreationStatus = 'Server off';
+  }
+
+  onUpdateServerName(event: Event){
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 
 }
