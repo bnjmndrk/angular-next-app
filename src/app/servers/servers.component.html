@@ -3,7 +3,8 @@
 <!-- click is a button event, and Event binding requires parenthesis, this time being set by typescript method  -->
 <button class="btn btn-primary" 
 [disabled]="!allowNewServer"
-(click)="onCreateServer()">Add Server</button>
+(mousedown)="onCreateServer()"
+(mouseup)="onMouseUp()">Add Server</button>
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
