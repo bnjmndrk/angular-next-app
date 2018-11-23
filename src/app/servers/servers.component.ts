@@ -32,10 +32,12 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
+    console.log("You are in create");
     this.serverCreationStatus = 'Server was created';
   }
 
   onMouseUp(){
+    console.log("You are in mouse up");
     this.serverCreationStatus = 'Server off';
   }
 
