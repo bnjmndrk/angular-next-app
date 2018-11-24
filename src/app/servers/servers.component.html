@@ -5,7 +5,7 @@
     type="text" 
     class="form-control"
     (input)="onUpdateServerName($event)">
-<p>{{ serverName }}</p>
+<p>{(ngMOdel)}="ServerName"</p>
 <!-- button creates the button and class="btn btn-primary" add some nice css styling -->
 <!-- disabled is a property for the button which we tie to the typescript variable. property binding required the square brackets -->
 <!-- click is a button event, and Event binding requires parenthesis, this time being set by typescript method  -->
@@ -13,7 +13,13 @@
     class="btn btn-primary" 
     [disabled]="!allowNewServer"
     (mousedown)="onCreateServer()"
-    (mouseup)="onMouseUp()">Add Server</button>
+    (mouseover)="onMouseOver()">Add Server</button>
 <p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
+<p *gnIf=serverCreated else #noServer> Server was created, server name is {{ ServerName }}</p> <!-- ngIf is a directive for controlling the DOM, here we control whether or not this <p> paragraph will appear in the DOM or not-->
+,<ng-template #noServer>
+    <p> NO Server has been created</p>
+
+
+</ng-template>
+    <app-server></app-server>
 <app-server></app-server>

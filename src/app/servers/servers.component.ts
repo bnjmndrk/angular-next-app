@@ -19,9 +19,10 @@ The selector can be written as:
 })
 export class ServersComponent implements OnInit {
 
+  serverCreated:boolean = false;
   allowNewServer:boolean = false;
   serverCreationStatus:string = 'No server was created!';
-  serverName:string = '';
+  serverName:string = "Test Server Name"; // initial value of server name
 
   constructor() { 
     setTimeout(() => {
@@ -33,6 +34,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
+    this.serverCreated = true;
     console.log("You are in create");
     this.serverCreationStatus = 'Server was created';
   }
@@ -44,6 +46,10 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event){
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onMouseOver(){
+    return "This is a tool tip message";
   }
 
 }
